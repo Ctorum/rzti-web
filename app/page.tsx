@@ -17,6 +17,7 @@ import {
   ArrowRight,
   ExternalLink,
 } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
   // Função para rolagem suave
@@ -65,46 +66,49 @@ export default function Home() {
               Contato
             </a>
           </nav>
-          <Button
-            size="sm"
-            className="hidden md:flex"
-            onClick={() =>
-              window.open(
-                "https://api.whatsapp.com/send?phone=5511982870484&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20RZTI",
-                "_blank",
-              )
-            }
-          >
-            Fale Conosco
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => {
-              const mobileMenu = document.getElementById("mobile-menu")
-              if (mobileMenu) {
-                mobileMenu.classList.toggle("hidden")
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Button
+              size="sm"
+              className="hidden md:flex"
+              onClick={() =>
+                window.open(
+                  "https://api.whatsapp.com/send?phone=5511982870484&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20RZTI",
+                  "_blank",
+                )
               }
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6"
             >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-          </Button>
+              Fale Conosco
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => {
+                const mobileMenu = document.getElementById("mobile-menu")
+                if (mobileMenu) {
+                  mobileMenu.classList.toggle("hidden")
+                }
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-6 w-6"
+              >
+                <line x1="4" x2="20" y1="12" y2="12" />
+                <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="18" y2="18" />
+              </svg>
+            </Button>
+          </div>
         </div>
         {/* Mobile menu */}
         <div id="mobile-menu" className="hidden md:hidden">
@@ -153,6 +157,10 @@ export default function Home() {
             >
               Contato
             </a>
+            <div className="flex items-center gap-2 px-4 py-2">
+              <ThemeToggle />
+              <span className="text-sm">Tema</span>
+            </div>
             <Button
               size="sm"
               className="mx-4 mt-2"
@@ -208,7 +216,7 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section id="servicos" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
+        <section id="servicos" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50 dark:bg-muted/10">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -364,7 +372,7 @@ export default function Home() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                      <div className="bg-muted/30 rounded-lg p-6 flex flex-col items-center text-center">
+                      <div className="bg-muted/30 dark:bg-muted/10 rounded-lg p-6 flex flex-col items-center text-center">
                         <div className="rounded-full bg-primary/10 p-4 mb-4">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -388,7 +396,7 @@ export default function Home() {
                         </p>
                       </div>
 
-                      <div className="bg-muted/30 rounded-lg p-6 flex flex-col items-center text-center">
+                      <div className="bg-muted/30 dark:bg-muted/10 rounded-lg p-6 flex flex-col items-center text-center">
                         <div className="rounded-full bg-primary/10 p-4 mb-4">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -412,7 +420,7 @@ export default function Home() {
                         </p>
                       </div>
 
-                      <div className="bg-muted/30 rounded-lg p-6 flex flex-col items-center text-center">
+                      <div className="bg-muted/30 dark:bg-muted/10 rounded-lg p-6 flex flex-col items-center text-center">
                         <div className="rounded-full bg-primary/10 p-4 mb-4">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -635,7 +643,7 @@ export default function Home() {
         </section>
 
         {/* Por que nos escolher */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50 dark:bg-muted/10">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
